@@ -1,1 +1,1 @@
-export {default} from '../../views/Aboutme'
+export { default } from '../../views/Aboutme'

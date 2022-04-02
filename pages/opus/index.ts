@@ -1,1 +1,1 @@
-export {default} from '../../views/Opus'
+export { default } from '../../views/Opus'
