@@ -7,7 +7,7 @@ padding:80px 0 0 0;
 
 .centent {
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
   position: relative;
   margin-bottom: 40px;
 }
@@ -29,6 +29,7 @@ padding:80px 0 0 0;
 }
 
 .opus {
+  width:100% ;
   display: flex;
   margin-bottom: 10px;
   justify-content: center;
@@ -54,6 +55,7 @@ padding:80px 0 0 0;
     rgb(0 0 0 / 12%) 0px 1px 8px 0px;
 
 }
+
 
 .line {
   width: 100%;
@@ -211,14 +213,56 @@ padding:80px 0 0 0;
 .border {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  position: absolute;
-  left: 45%;
+  margin: 40px auto;
+  width:100% ;
+}
+.border div:nth-child(3){
+  margin:0 ;
 
 }
 
 .borderoff {
   display: none;
+}
+@media only screen and (max-width:600px){
+  .centent p:nth-child(1) {
+  font-size: 20px; 
+}
+ 
+  .box{
+    width: 90%;
+    height:100px ;
+    border-radius: 10px 10px 20px 20px;
+  }
+  .tag{
+    max-width: 40px;
+    max-height: 50px;
+
+  }
+  .garden1 {
+  max-width: 2px;
+  max-height: 3px;
+  border-radius: 50%;
+  margin: 0 1px;
+  
+}
+.mode1 div {
+  max-width: 2px;
+  max-height: 2px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 2px .8px 0 0;
+}
+.mode1 {
+  background-color: white;
+  width: 42px;
+  max-height: 3px;
+  display: flex;
+  margin:0 ;
+}
+.mode span:nth-child(4) {
+  font-size: 16px;
+}
 }
 
 .border div {

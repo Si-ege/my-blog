@@ -6,7 +6,6 @@ export const Div = styled.div`
   justify-content: center;
   position:fixed;
   left:0 ;
-  opacity:0.5 ;
   z-index:11;
 .titlesvg{
   width:40px ;
@@ -17,20 +16,22 @@ export const Div = styled.div`
       top:10px ;
       right:-10px;
       margin:10px 20px;
-      border:#FFF solid 1px;
+      border:rgb(54, 54, 54) solid 1px;
       border-radius:4px;
       display:none ;
+      z-index:auto;
   }
   .btn button{
     position:repeat;
     left:30px ;
     bottom:-23px ;
     background: transparent;
-    color: #fff;
+    color:rgbrgb(54, 54, 54) ;
     padding:10px ;
     display:flex ;
     align-items: center;
     border: none;
+    z-index:auto;
   }
   .btn button:hover{
       opacity:0.3 ;
@@ -45,6 +46,7 @@ ul{
   padding: 0;
   overflow: hidden;
   display:flex ;
+  opacity:0.5 ;
 }
  ul li{
   width:20% ;
@@ -58,7 +60,6 @@ ul .svg:hover{
   opacity:1 ;
 
 }
-
 ul svg{
   width:30px ;
   display:inline-block ;
@@ -75,42 +76,31 @@ ul svg{
 @media only screen and (max-width:600px){
   .btn button{
     padding:3px ;
+    z-index:auto;
   }
   .btn{
     display:block ;
+    z-index:auto;
   }
   .nav1{
     display:block ;
-    background-color: black;
-    width:50%;
+    background-color:rgb(54, 54, 54);
+    width:100%;
     height:100%;
-    border-radius:0 0 10px 0 ;
-    z-index:18;
-
+    z-index:1;
+    overflow:hidden ;
+    opacity:1 ;
   }
   .nav{
     display:none ;
-    background-color: #010101;
-    width:50%;
-    height:100%;
-    border-radius:0 0 10px 0 ;
-    opacity:1 ;
-  }
-  ul svg{
-    background-color:white ;
-  }
-  
+  }  
   ul li{
     color:white ;
     width:100%;
-    background-color: #010101;
-    margin:60px 0 40px 0 ; 
+    background-color: rgb(54, 54, 54); 
     border-bottom:1px solid white ;
   }
-  ul li:nth-child(5){
-    margin-bottom:40px ;
-  }
-}
+
 
 
 `
