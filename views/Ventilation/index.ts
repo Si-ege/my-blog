@@ -1,1 +1,1 @@
-export {default} from './ventilation'
+export { default } from './ventilation'
