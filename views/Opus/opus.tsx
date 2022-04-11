@@ -9,9 +9,9 @@ const Opus = () => {
       date: '2022.3.26'
     },
     {
-      title: 'Github API 调用',
-      dec: 'Github API 调用',
-      href: '/',
+      title: 'Github 用户查询',
+      dec: 'Github 用户查询',
+      href: '/githubAPI',
       date: '2022.4.2'
     },
     {
