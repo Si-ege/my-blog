@@ -56,7 +56,6 @@ padding:80px 0 0 0;
 
 }
 
-
 .line {
   width: 100%;
   height: 2px;
@@ -66,9 +65,11 @@ padding:80px 0 0 0;
 }
 
 .image {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
+  position: relative;
+  display:flex ;
+  justify-content: space-around;
+  top:60% ;
+  
 }
 
 .image img {
@@ -113,12 +114,17 @@ padding:80px 0 0 0;
 }
 
 .alrte {
-  position: absolute;
-  left: 45%;
-  background-color: #d32f2f;
-  padding: 10px 40px 10px 20px;
-  border-radius: 5px;
+  position:absolute ;
+  bottom:80px ;
+  left:44% ;
+  text-align:center;
   margin: 20px 0 0 0;
+}
+.alrte p{
+  display:inline-block ;
+  padding:3px 50px ;
+  border-radius: 5px;
+  background-color: #d32f2f;
 }
 
 .tag {
@@ -199,7 +205,7 @@ padding:80px 0 0 0;
   height: 10px;
   margin-bottom: 2px;
   display: flex;
-
+  align-items: center
 }
 
 .mode1 div {
@@ -211,6 +217,7 @@ padding:80px 0 0 0;
 }
 
 .border {
+  position:absolute ;
   display: flex;
   justify-content: center;
   margin: 40px auto;
@@ -251,13 +258,15 @@ padding:80px 0 0 0;
   max-height: 2px;
   background-color: black;
   border-radius: 50%;
-  margin: 2px .8px 0 0;
+  margin:0 0.4px 0 ;
 }
 .mode1 {
   background-color: white;
-  width: 42px;
+  width: 32px;
   max-height: 3px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin:0 ;
 }
 .mode span:nth-child(4) {
@@ -281,12 +290,14 @@ padding:80px 0 0 0;
 }
 
 .btn {
-  margin-top: 130px;
-  text-align: center;
+  margin: 130px auto;
+  text-align:center
 }
 
 .btn1 {
-  margin-bottom: 20px;
+  margin:0 auto ;
+  display:flex ;
+  justify-content: center;
 }
 
 .btn svg {
@@ -302,7 +313,7 @@ padding:80px 0 0 0;
   background-color: #1976d2;
   text-align: -webkit-center;
   border-radius: 50%;
-  margin-right: 30px;
+  margin:15px;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
 }
 
@@ -312,7 +323,7 @@ padding:80px 0 0 0;
   background-color: rgb(229, 57, 53);
   text-align: -webkit-center;
   border-radius: 50%;
-  margin-right: 30px;
+  margin:15px;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
 }
 
@@ -322,8 +333,13 @@ padding:80px 0 0 0;
   background-color: orange;
   text-align: -webkit-center;
   border-radius: 50%;
-  margin-right: 30px;
+  margin:15px;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
+}
+.bottombtn {
+  display:flex ;
+  justify-content: center;
+
 }
 
 .btn2 {
@@ -332,7 +348,7 @@ padding:80px 0 0 0;
   background-color: #e0e0e0;
   text-align: -webkit-center;
   border-radius: 50%;
-  margin-right: 15px;
+  margin: 7.5px;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
 }
 

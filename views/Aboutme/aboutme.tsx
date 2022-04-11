@@ -1,6 +1,8 @@
+import { useEffect } from "react"
 import { Section } from "./style"
 
 const AboutMe = () => {
+
   return (
     <Section>
       <div className="main">
@@ -14,4 +16,5 @@ const AboutMe = () => {
     </Section>
   )
 }
+
 export default AboutMe
