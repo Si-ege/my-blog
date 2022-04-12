@@ -18,6 +18,7 @@ const App: NextPage<Props, any> = () => {
 
   const [data, setData] = useState([])
   const [obj, setObj] = useState({});
+  const [usename,setUsename] =useState({})
 
   useEffect(() => {
     const url = decodeURIComponent(location.href)
@@ -27,7 +28,10 @@ const App: NextPage<Props, any> = () => {
       for (let i = 0; i < pre.length; i++) {
         let p = pre[i].split('=');
         obj[p[0]] = p[1]
+        const usename = obj?.id
         setObj(obj)
+        setUsename(usename)
+
       }
     }
     initPageData();
