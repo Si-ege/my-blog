@@ -55,6 +55,7 @@ const Weather = () => {
           <form action="">
             <input type="text" name='id' style={{ border: '1px solid #000', margin: '0 20px 20px 0', height: '30px', borderRadius: '4px' }} />
             <button type="submit" style={{ border: '1px solid #000', padding: '2px 10px', borderRadius: '5px' }}>查询</button>
+            <p>请输入您所要查询的城市</p>
           </form>
         </div>
         {
