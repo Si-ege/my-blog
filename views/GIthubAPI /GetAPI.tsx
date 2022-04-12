@@ -1,21 +1,24 @@
+import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import { Div } from './style'
 
-type Props = [
-  data?:data
-]
-type data ={
-  name:string;
-  login:string;
-  avatar_url:string;
-  html_url:string
+type Props = {
+  data?: data;
+  obj?: data;
+}
+type data = {
+  name: string;
+  login: string;
+  avatar_url: string;
+  html_url: string;
+  id?: string
 }
 
-
-export default function App() {
+const App: NextPage<Props, any> = () => {
 
   const [data, setData] = useState([])
   const [obj, setObj] = useState({});
+
   useEffect(() => {
     const url = decodeURIComponent(location.href)
     if (url.indexOf('id') !== -1) {
@@ -27,19 +30,14 @@ export default function App() {
         setObj(obj)
       }
     }
-
-    initPageData()
-   
- 
-  })
-
+    initPageData();
+  }, [])
 
   const initPageData = () => {
-    var usename = obj?.id
+    const usename = obj?.id
     {
-      usename === undefined
-        ? []
-        :
+      usename !== undefined
+        ?
         fetch(`https://api.github.com/users/${usename}`, {
           headers: {
             'Content-Type': 'application/json'
@@ -56,11 +54,7 @@ export default function App() {
             setData(data),
               console.log(data)
           })
-          .catch(error => {
-            if (error.status === 404) {
-              // do something about 404
-            }
-          })
+        : null
     }
   }
 
@@ -78,41 +72,36 @@ export default function App() {
             </form>
             <p style={{ textAlign: 'left', display: 'inline-block' }}>请输入Git Hub ID</p>
           </div>
-          { 
+          {
             obj?.id !== undefined ?
-            <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '50px  0 0' }}>
-            <div className="image" style={{borderRadius:'50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
-              <img src={data.avatar_url} alt="" width='70px' />
-            </div>
-            <div >
-              <div style={{ display: 'flex' }}>
-                <p style={{ margin: '0 10px 0 0'  }}>ID:</p>
-                <p>{data.login}</p>
+              <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '30px  0 0' }}>
+                <div className="image" style={{ borderRadius: '50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
+                  <img src={data.avatar_url} alt="" width='70px' />
+                </div>
+                <div >
+                  <div style={{ display: 'flex' }}>
+                    <p style={{ margin: '0 10px 0 0' }}>ID:</p>
+                    <p>{data.login}</p>
+                  </div>
+                  <div style={{ display: 'flex' }}>
+                    <p style={{ margin: '0 10px 0 0' }}>name:</p>
+                    <p>{data.name}</p>
+                  </div>
+                  <div style={{ display: 'flex' }}>
+                    <p style={{ margin: '0 10px 0 0' }}>GitHub link:</p>
+                    <a target='_blank' href={data.html_url}>点击跳转</a>
+                  </div>
+                  <div style={{ display: 'flex' }}>
+                    <p style={{ margin: '0 10px 0 0' }}>location:</p>
+                    <p>{data.location}</p>
+                  </div>
+                </div>
               </div>
-              <div style={{ display: 'flex' }}>
-                <p style={{ margin: '0 10px 0 0' }}>name:</p>
-                <p>{data.name}</p>
-              </div>
-              <div style={{ display: 'flex' }}>
-                <p style={{ margin: '0 10px 0 0' }}>仓库链接:</p>
-                <a href={data.html_url}>点击跳转</a>
-              </div>
-            </div>
-          </div>
-          : null
-            
+              : null
           }
-          
-
         </div>
-
       </div>
     </Div>
-
   )
-
 }
-
-function data(data: any) {
-  throw new Error("Function not implemented.");
-}
+export default App
