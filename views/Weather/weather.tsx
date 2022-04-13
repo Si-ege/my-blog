@@ -24,7 +24,7 @@ const Weather = () => {
   const PageApi = () => {
     const escpe = encodeURI(eval('obj.' +'id'))
     const escape = 'query?city=' + escpe
-    fetch(`http://jisutqybmf.market.alicloudapi.com/weather/${escape}`, {
+    fetch(`https://jisutqybmf.market.alicloudapi.com/weather/${escape}`, {
       method: 'GET',
       mode: 'cors',
       headers: {
