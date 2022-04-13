@@ -18,7 +18,7 @@ const App: NextPage<Props, any> = () => {
 
   const [data, setData] = useState([])
   const [obj, setObj] = useState({});
-  const [usename,setUsename] =useState({})
+  const [usename, setUsename] = useState({})
 
   useEffect(() => {
     const url = decodeURIComponent(location.href)
@@ -39,6 +39,7 @@ const App: NextPage<Props, any> = () => {
 
   const initPageData = () => {
     const usename = obj?.id
+    console.log(usename)
     {
       usename !== undefined
         ?
@@ -76,33 +77,29 @@ const App: NextPage<Props, any> = () => {
             </form>
             <p style={{ textAlign: 'left', display: 'inline-block' }}>请输入Git Hub ID</p>
           </div>
-          {
-            obj?.id !== undefined ?
-              <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '30px  0 0' }}>
-                <div className="image" style={{ borderRadius: '50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
-                  <img src={data.avatar_url} alt="" width='70px' />
-                </div>
-                <div >
-                  <div style={{ display: 'flex' }}>
-                    <p style={{ margin: '0 10px 0 0' }}>ID:</p>
-                    <p>{data.login}</p>
-                  </div>
-                  <div style={{ display: 'flex' }}>
-                    <p style={{ margin: '0 10px 0 0' }}>name:</p>
-                    <p>{data.name}</p>
-                  </div>
-                  <div style={{ display: 'flex' }}>
-                    <p style={{ margin: '0 10px 0 0' }}>GitHub link:</p>
-                    <a target='_blank' href={data.html_url}>点击跳转</a>
-                  </div>
-                  <div style={{ display: 'flex' }}>
-                    <p style={{ margin: '0 10px 0 0' }}>location:</p>
-                    <p>{data.location}</p>
-                  </div>
-                </div>
+          <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '30px  0 0' }}>
+            <div className="image" style={{ borderRadius: '50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
+              <img src={data.avatar_url} alt="" width='70px' />
+            </div>
+            <div >
+              <div style={{ display: 'flex' }}>
+                <p style={{ margin: '0 10px 0 0' }}>ID:</p>
+                <p>{data.login}</p>
               </div>
-              : null
-          }
+              <div style={{ display: 'flex' }}>
+                <p style={{ margin: '0 10px 0 0' }}>name:</p>
+                <p>{data.name}</p>
+              </div>
+              <div style={{ display: 'flex' }}>
+                <p style={{ margin: '0 10px 0 0' }}>GitHub link:</p>
+                <a target='_blank' href={data.html_url}>点击跳转</a>
+              </div>
+              <div style={{ display: 'flex' }}>
+                <p style={{ margin: '0 10px 0 0' }}>location:</p>
+                <p>{data.location}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Div>

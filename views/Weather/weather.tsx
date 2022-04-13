@@ -25,8 +25,6 @@ const Weather = () => {
   const PageApi = () => {
     const escpe = encodeURI(obj?.id)
     const escape = 'query?city=' + escpe
-    console.log(escpe)
-
     fetch(`http://jisutqybmf.market.alicloudapi.com/weather/${escape}`, {
       method: 'GET',
       headers: {
@@ -38,12 +36,9 @@ const Weather = () => {
         const result = data.result
         setResult(result)
         console.log('data:', data)
-
       })
   }
   const daily = result.daily
-
-
   const du = "°C"
   return (
     <Div>
@@ -55,7 +50,6 @@ const Weather = () => {
           <form action="">
             <input type="text" name='id' style={{ border: '1px solid #000', margin: '0 20px 20px 0', height: '30px', borderRadius: '4px' }} />
             <button type="submit" style={{ border: '1px solid #000', padding: '2px 10px', borderRadius: '5px' }}>查询</button>
-            <p>请输入您所要查询的城市</p>
           </form>
         </div>
         {
@@ -82,7 +76,11 @@ const Weather = () => {
                   })}
               </div>
             </div>
-            : <p>未查询到该城市</p>
+            : 
+            <div>
+              <p>请输入您所要查询的城市</p>
+              <p>未查询到该城市</p>
+            </div>
         }
       </div>
     </Div >
