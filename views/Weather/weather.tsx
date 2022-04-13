@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Div } from './style'
 
@@ -23,7 +22,7 @@ const Weather = () => {
     PageApi()
   }, [])
   const PageApi = () => {
-    const escpe = encodeURI(obj?.id)
+    const escpe = encodeURI(eval('obj.' +'id'))
     const escape = 'query?city=' + escpe
     fetch(`http://jisutqybmf.market.alicloudapi.com/weather/${escape}`, {
       method: 'GET',
@@ -38,7 +37,7 @@ const Weather = () => {
         console.log('data:', data)
       })
   }
-  const daily = result.daily
+  const daily = eval('result.' +'daily')
   const du = "°C"
   return (
     <Div>
@@ -57,7 +56,7 @@ const Weather = () => {
             ?
             <div className="card">
               <div style={{ marginBottom: '20px', fontSize: '30px' }}>
-                <h1>{result !== undefined ? result.city : null}</h1>
+                <h1>{result !== undefined ? eval('result.' +'city')  : null}</h1>
               </div>
               <div className='cardBox'>
                 {

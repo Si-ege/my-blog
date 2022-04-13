@@ -2,23 +2,11 @@ import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import { Div } from './style'
 
-type Props = {
-  data?: data;
-  obj?: data;
-}
-type data = {
-  name: string;
-  login: string;
-  avatar_url: string;
-  html_url: string;
-  id?: string
-}
-
-const App: NextPage<Props, any> = () => {
+const App = () => {
 
   const [data, setData] = useState([])
   const [obj, setObj] = useState({});
-  const [usename, setUsename] = useState({})
+ 
 
   useEffect(() => {
     const url = decodeURIComponent(location.href)
@@ -28,22 +16,18 @@ const App: NextPage<Props, any> = () => {
       for (let i = 0; i < pre.length; i++) {
         let p = pre[i].split('=');
         obj[p[0]] = p[1]
-        const usename = obj?.id
         setObj(obj)
-        setUsename(usename)
-
       }
     }
     initPageData();
   }, [])
 
   const initPageData = () => {
-    const usename = obj?.id
-    console.log(usename)
+    const ID = eval('obj.' +'id')
     {
-      usename !== undefined
+      ID !== undefined
         ?
-        fetch(`https://api.github.com/users/${usename}`, {
+        fetch(`https://api.github.com/users/${ID}`, {
           headers: {
             'Content-Type': 'application/json'
           },
@@ -79,24 +63,24 @@ const App: NextPage<Props, any> = () => {
           </div>
           <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '30px  0 0' }}>
             <div className="image" style={{ borderRadius: '50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
-              <img src={data.avatar_url} alt="" width='70px' />
+              <img src={eval('data.' +'avatar_url')} alt="" width='70px' />
             </div>
             <div >
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>ID:</p>
-                <p>{data.login}</p>
+                <p>{eval('data.' +'login')}</p>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>name:</p>
-                <p>{data.name}</p>
+                <p>{eval('data.' +'name')}</p>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>GitHub link:</p>
-                <a target='_blank' href={data.html_url}>点击跳转</a>
+                <a target='_blank' href={eval('data.' +'html_url')}>点击跳转</a>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>location:</p>
-                <p>{data.location}</p>
+                <p>{eval('data.' +'location')}</p>
               </div>
             </div>
           </div>
