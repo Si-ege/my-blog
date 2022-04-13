@@ -22,7 +22,7 @@ padding:100px 0 0 ;
 }
 .box{
   width:45% ;
-  height:400px ;
+  height:100% ;
   margin:100px auto ;
   text-align: center;
   position: relative;
@@ -49,6 +49,7 @@ padding:100px 0 0 ;
   .box {
     width:100% ;
     padding: 10px ;
+    margin: 0 auto ;
   }
   .cardBox{
   display:flex ;

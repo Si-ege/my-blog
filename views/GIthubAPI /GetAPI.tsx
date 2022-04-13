@@ -6,7 +6,7 @@ const App = () => {
 
   const [data, setData] = useState([])
   const [obj, setObj] = useState({});
- 
+
 
   useEffect(() => {
     const url = decodeURIComponent(location.href)
@@ -23,7 +23,7 @@ const App = () => {
   }, [])
 
   const initPageData = () => {
-    const ID = eval('obj.' +'id')
+    const ID = eval('obj.' + 'id')
     {
       ID !== undefined
         ?
@@ -56,31 +56,31 @@ const App = () => {
           </div>
           <div className="form">
             <form action="">
-              <input type="text" name="id" style={{ margin: '0 20px 0 0', height: '30px', borderRadius: '4px' }} />
+              <input type="text" name="id" style={{ margin: '0 20px 10px 0', height: '30px', borderRadius: '4px' }} />
               <button type="submit" style={{ border: '1px solid #000', padding: '2px 10px', borderRadius: '5px' }}>搜索</button>
             </form>
-            <p style={{ textAlign: 'left', display: 'inline-block' }}>请输入Git Hub ID</p>
+            <p style={{ textAlign: 'left', display: 'inline-block' }}>{eval('obj.' + 'id') ? null : "请输入Git Hub ID"}</p>
           </div>
-          <div className="text" style={{ display: "flex", alignItems: 'center', justifyContent: ' center', margin: '30px  0 0' }}>
-            <div className="image" style={{ borderRadius: '50%', margin: '0 40px 0 0', backgroundColor: '#000' }}>
-              <img src={eval('data.' +'avatar_url')} alt="" width='70px' />
+          <div className="text">
+            <div className="image" style={{ borderRadius: '50%', margin: '0 20px 0 0', backgroundColor: '#000' }}>
+              <img src={eval('data.' + 'avatar_url')} alt="" width='70px' />
             </div>
             <div >
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>ID:</p>
-                <p>{eval('data.' +'login')}</p>
+                <p>{eval('data.' + 'login')}</p>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>name:</p>
-                <p>{eval('data.' +'name')}</p>
+                <p>{eval('data.' + 'name')}</p>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>GitHub link:</p>
-                <a target='_blank' href={eval('data.' +'html_url')}>点击跳转</a>
+                <a target='_blank' href={eval('data.' + 'html_url')}>点击跳转</a>
               </div>
               <div style={{ display: 'flex' }}>
                 <p style={{ margin: '0 10px 0 0' }}>location:</p>
-                <p>{eval('data.' +'location')}</p>
+                <p>{eval('data.' + 'location')}</p>
               </div>
             </div>
           </div>

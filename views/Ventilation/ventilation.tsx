@@ -6,6 +6,7 @@ const Ventilation = () => {
   const [open, setOpen] = useState(false)
   const [warm, setWarm] = useState(false)
   const [cold, setCold] = useState(true)
+  const [play, setPlay] = useState(true)
   const SwitchingWarm = () => {
     setWarm(true);
     setCold(!true)
@@ -18,6 +19,18 @@ const Ventilation = () => {
     }
   }
   const Open = () => {
+    let video = document.getElementById('video') as HTMLVideoElement
+    let video1 = document.getElementById('video1') as HTMLVideoElement
+    let video2 = document.getElementById('video2') as HTMLVideoElement
+    if(video.paused){
+        video.play()
+        video1.play()
+        video2.play()
+    }else{
+        video.pause()
+        video1.pause()
+        video2.pause() 
+    }
     setOpen(open => !open)
   }
 
@@ -121,7 +134,9 @@ const Ventilation = () => {
 
         </div>
       </div>
-      <video src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/air-extractor-fan.m4a" style={{ opacity: 0 }} preload="auto" controls loop hidden={true}></video>
+      <video id='video'  src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/air-extractor-fan.m4a" style={{ display:'none' }} loop ></video>
+      <video id='video1' src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/ac-work%20%281%29.m4a" style={{ display:'none' }}></video>
+      <video id='video2'  src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/di.m4a" style={{ display:'none' }}></video>
     </Section>
   )
 }

@@ -49,11 +49,26 @@ padding:100px 0 0 ;
 .image img{
     border-radius:50% ;
 }
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px  0 0
+
+}
 @media only screen and (max-width:600px){
     .box{
     width:90% ;
     height:300px ;
     margin:100px auto ;   
+}
+.form form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text{
+    margin:0px  ;
 }
 
 .content {
