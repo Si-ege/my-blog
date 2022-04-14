@@ -18,10 +18,11 @@ const Ventilation = () => {
       setCold(!false)
     }
   }
+  
   const Open = () => {
     let video = document.getElementById('video') as HTMLVideoElement
     let video1 = document.getElementById('video1') as HTMLVideoElement
-    let video2 = document.getElementById('video2') as HTMLVideoElement
+    var video2 = document.getElementById('video2') as HTMLVideoElement
     if(video.paused){
         video.play()
         video1.play()
@@ -35,14 +36,22 @@ const Ventilation = () => {
   }
 
   const Add = () => {
-    if (count < 31) {
+    var video2 = document.getElementById('video2') as HTMLVideoElement
+    if (count < 31 && open === true ) {
       setCount(count + 1)
+    }
+    if(open === true){
+      video2.play()
     }
   }
 
   const Less = () => {
-    if (count > 16) {
+    var video2 = document.getElementById('video2') as HTMLVideoElement
+    if (count > 16 && open === true) {
       setCount(count - 1)
+    }
+    if(open === true){
+      video2.play()
     }
   }
   return (
@@ -115,12 +124,6 @@ const Ventilation = () => {
           <div></div>
           <div></div>
         </div>}
-        {count > 30 ?
-          <div className='alrte'><p>温度最高了!</p></div> : ''
-        }
-        {count < 17 ?
-          <div className='alrte'><p>温度最低了!</p></div> : ''
-        }
         <div className='btn'>
           <div className='btn1'>
             <button onClick={Switchingcold}><svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="AcUnitIcon"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"></path></svg></button>
@@ -131,8 +134,13 @@ const Ventilation = () => {
             <button className='btn2' onClick={Add}><svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="ExpandLessIcon"><path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg></button>
             <button className='btn2' onClick={Less}><svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="ExpandMoreIcon"><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button>
           </div>
-
         </div>
+        {count > 30 ?
+          <div className='alrte'><p>温度最高了!</p></div> : ''
+        }
+        {count < 17 ?
+          <div className='alrte'><p>温度最低了!</p></div> : ''
+        }
       </div>
       <video id='video'  src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/air-extractor-fan.m4a" style={{ display:'none' }} loop ></video>
       <video id='video1' src="https://peiguo.oss-cn-beijing.aliyuncs.com/blog/ac-work%20%281%29.m4a" style={{ display:'none' }}></video>

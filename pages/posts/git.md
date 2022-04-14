@@ -1,9 +1,8 @@
 ---
-title: git 学习
+title: Git常用命令
 date: 2022-03-1 23:46:12
 tags:
 ---
-# git学习
 ## git安装
 #### 下载安装
 ```lua 

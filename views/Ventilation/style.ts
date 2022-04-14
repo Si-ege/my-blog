@@ -114,11 +114,19 @@ padding:80px 0 0 0;
 }
 
 .alrte {
-  position:absolute ;
-  bottom:80px ;
-  left:44% ;
+  position: relative ;
+  bottom:100px ;
   text-align:center;
-  margin: 20px 0 0 0;
+  margin: 20px 0 100px 0;
+  animation:animation 0.8s;
+}
+@keyframes animation{
+  from{
+    opcity:0;
+  }
+  to{
+    opcity:1
+  }
 }
 .alrte p{
   display:inline-block ;
